@@ -1,0 +1,14 @@
+<div class="row">
+  <ng-container *ngFor="let post of posts">
+    <div class="col-3">
+      <nb-card accent="info">
+        <nb-card-header>
+          {{ post?.title }}
+        </nb-card-header>
+        <nb-card-body>
+          <img class="w-100" [src]="post?.url" />
+        </nb-card-body>
+      </nb-card>
+    </div>
+  </ng-container>
+</div>
