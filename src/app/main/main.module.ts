@@ -8,6 +8,8 @@ import {
   NbSidebarModule,
   NbButtonModule,
   NbCardModule,
+  NbIconModule,
+  NbActionsModule,
 } from '@nebular/theme';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
@@ -20,6 +22,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     NbSidebarModule,
     NbButtonModule,
     NbCardModule,
+    NbIconModule,
+    NbActionsModule,
   ],
 })
 export class MainModule {}

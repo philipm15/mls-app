@@ -1,6 +1,17 @@
 <nb-layout>
   <nb-layout-header fixed>
-    ja moin
+    <nb-actions>
+      <nb-action
+        ><button nbButton ghost status="info">
+          <nb-icon icon="grid-outline"></nb-icon>Home
+        </button></nb-action
+      >
+      <nb-action
+        ><button nbButton ghost status="info">
+          <nb-icon icon="folder-outline"></nb-icon>Collections
+        </button></nb-action
+      >
+    </nb-actions>
   </nb-layout-header>
   <nb-layout-column>
     <router-outlet></router-outlet>

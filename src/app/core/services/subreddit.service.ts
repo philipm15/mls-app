@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, tap, filter } from 'rxjs/operators';
 import { PostModel } from '../models/post.model';
 
 export interface SortOptionsInterface {
@@ -26,8 +26,9 @@ export class SubredditService {
       .get(`${this.url}${name}.json`)
       .pipe(
         map((result: any) =>
-          result?.data?.children?.map((child) => child.data as PostModel)
+          result?.data?.children.map((child) => child.data as PostModel)
         )
-      );
+      )
+      .pipe(tap((result) => console.log({ result })));
   }
 }

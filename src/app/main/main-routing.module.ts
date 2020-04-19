@@ -9,8 +9,12 @@ const routes: Routes = [
     component: LayoutComponent,
     children: [
       {
-        path: '',
+        path: 'home',
         component: DashboardComponent,
+      },
+      {
+        path: '',
+        redirectTo: 'home',
       },
     ],
   },

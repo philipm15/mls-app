@@ -9,6 +9,7 @@ import { PostModel } from 'src/app/core/models/post.model';
 })
 export class DashboardComponent implements OnInit {
   posts: PostModel[] = [];
+  readonly fileExtensions = ['png', 'jpg', 'jpeg', 'tiff', 'gif'];
 
   constructor(private subredditService: SubredditService) {}
 
@@ -19,10 +20,18 @@ export class DashboardComponent implements OnInit {
   loadPosts() {
     this.subredditService.getSubredditPosts('malelivingspace').subscribe(
       (result) => {
-        this.posts = result;
-        console.log(result);
+        this.posts = result.filter((child) => {
+          return (
+            child.url != null &&
+            this.fileExtensions.indexOf(child.url.split('.').reverse()[0]) > -1
+          );
+        });
       },
       (error) => console.log(error)
     );
+  }
+
+  openOnReddit(post: PostModel) {
+    window.open('https://reddit.com' + post?.permalink, '_blank');
   }
 }

@@ -8,6 +8,19 @@
         <nb-card-body>
           <img class="w-100" [src]="post?.url" />
         </nb-card-body>
+        <nb-card-footer>
+          <div class="d-flex">
+            <button
+              class="ml-auto"
+              (click)="openOnReddit(post)"
+              nbButton
+              ghost
+              status="info"
+            >
+              <nb-icon icon="external-link-outline"></nb-icon>
+            </button>
+          </div>
+        </nb-card-footer>
       </nb-card>
     </div>
   </ng-container>
